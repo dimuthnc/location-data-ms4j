@@ -28,5 +28,12 @@ public class Application {
         new MicroservicesRunner()
                 .deploy(new IOTDataService())
                 .start();
+
+/*
+        new MicroservicesRunner()
+                .deploy(new SaveDataService())
+                .start();
+*/
     }
+
 }

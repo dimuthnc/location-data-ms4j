@@ -25,6 +25,9 @@ import javax.ws.rs.core.*;
 
 import java.io.*;
 import java.nio.channels.FileChannel;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.util.*;
 
 /**
@@ -215,6 +218,29 @@ public class IOTDataService {
 
 
     }
+
+
+    @GET
+    @Path("/save/data")
+    public String saveData(@QueryParam("timestamp") String timestamp, @QueryParam("id") String id) {
+        try(FileWriter fw = new FileWriter("out.txt", true);
+            BufferedWriter bw = new BufferedWriter(fw);
+            PrintWriter out = new PrintWriter(bw))
+        {
+            out.println(id+"    "+timestamp);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return "DONE";
+
+
+
+    }
+
+
+
+
 
     // save uploaded file to new location
 

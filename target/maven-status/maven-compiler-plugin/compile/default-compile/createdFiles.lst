@@ -2,4 +2,5 @@ org/dimuth/dataServices/Application.class
 org/dimuth/dataServices/Connection.class
 org/dimuth/dataServices/IOTDataService.class
 org/dimuth/dataServices/typicalScene.class
+org/dimuth/dataServices/SaveDataService.class
 org/dimuth/dataServices/DataHandler.class
