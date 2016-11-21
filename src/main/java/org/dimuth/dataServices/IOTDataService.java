@@ -220,19 +220,25 @@ public class IOTDataService {
     }
 
 
-    @GET
+    @POST
     @Path("/save/data")
-    public String saveData(@QueryParam("timestamp") String timestamp, @QueryParam("id") String id) {
+    public String saveData(@QueryParam("id") String id,@QueryParam("timestamp") String timestamp) {
+        System.out.println(timestamp);
+        System.out.println(id);
+        if(timestamp.length()==13){
+            timestamp="0"+timestamp;
+        }
         try(FileWriter fw = new FileWriter("out.txt", true);
             BufferedWriter bw = new BufferedWriter(fw);
             PrintWriter out = new PrintWriter(bw))
         {
+
             out.println(id+"    "+timestamp);
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-        return "DONE";
+        return timestamp;
 
 
 

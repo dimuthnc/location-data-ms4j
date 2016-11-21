@@ -166,6 +166,7 @@ public class DataHandler {
         try{
             BufferedReader input = new BufferedReader(new FileReader("output.txt"));
             String[] dataLine =input.readLine().split(" ");
+
             return dataLine[1].substring(1,dataLine[1].length());
         }
         catch (FileNotFoundException e){

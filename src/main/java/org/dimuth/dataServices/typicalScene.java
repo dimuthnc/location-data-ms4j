@@ -37,6 +37,7 @@ public class typicalScene {
             data=input.readLine();
             while(data!=null){
                 String[] dataLine = data.split(" ");
+                System.out.println(data);
                 java.util.Date time=new java.util.Date(Long.parseLong(dataLine[1]));
                 int day=time.getDay();
 
